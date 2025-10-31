@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
     ArrayList<String> tableList = new ArrayList<>();
-    static ArrayList<Integer> history = new ArrayList<>();
+    static ArrayList<Integer> historyList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
             int num = Integer.parseInt(input);
             generateTable(num);
-            if (!history.contains(num)) history.add(num);
+            if (!historyList.contains(num)) historyList.add(num);
         });
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     private void generateTable(int number) {
         tableList.clear();
         for (int i = 1; i <= 10; i++) {
-            tableList.add(number + " × " + i + " = " + (number * i));
+            tableList.add(String.valueOf(number * i));
         }
         adapter.notifyDataSetChanged();
     }

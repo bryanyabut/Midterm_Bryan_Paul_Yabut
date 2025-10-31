@@ -19,7 +19,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         historyList = findViewById(R.id.historyList);
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, MainActivity.history);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, MainActivity.historyList);
         historyList.setAdapter(adapter);
     }
 }
